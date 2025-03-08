@@ -14,8 +14,8 @@ services:
 
   backend:
     build:
-      context: frontend
-      dockerfile: frontend/Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: go_app
     restart: unless-stopped
     ports:
@@ -34,8 +34,8 @@ services:
 
   frontend:
     build:
-      context: frontend
-      dockerfile: frontend/Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:
